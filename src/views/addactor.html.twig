@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AjouteActeur{% endblock %}
+
+{% block header %}
+
+<style>
+
+form {
+    witdh: 60%;
+}
+
+form textarea {
+    resize:none;
+    witdh: 60%;
+    min-height: 100px;
+}
+
+ul {
+    list-style: none;
+}
+
+div {
+    padding: 10px 0;
+}
+</style>
+
+{%endblock %}
+
+{%block content %}
+
+<h2>ajoute actor</h2>
+<form method="post" action="recordactor">
+<div>
+<input placeholder="prenom" name="first_name" required/>
+<input placeholder="nom" name="last_name" required/>
+</div>
+<button type="submit">ajoute actor</button>
+
+</form>
+
+{%endblock %}

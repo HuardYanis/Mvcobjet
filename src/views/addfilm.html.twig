@@ -1,0 +1,99 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AjouteActeur{% endblock %}
+
+{% block header %}
+
+<style>
+
+form {
+    witdh: 60%;
+}
+
+form textarea {
+    resize:none;
+    witdh: 60%;
+    min-height: 100px;
+}
+
+ul {
+    list-style: none;
+}
+
+div {
+    padding: 10px 0;
+}
+</style>
+
+{%endblock %}
+
+{%block content %}
+
+<h2>ajoute film</h2>
+<form method="post" action="recordfilm" enctype="multipart/form-data">
+<div>
+<input placeholder="titre" name="title" required/>
+
+<br>
+
+
+{% for actor in acteur %}
+  <label for="acteurs[]">{{actor.firstname}} {{actor.lastname}}</label>
+<input type="checkbox" name="acteurs[]" value="{{actor.id}}" >
+
+{% endfor %}
+
+<br>
+<br>
+directeur:
+<select name="directeur">
+{% for dir in directeur %}
+
+<option value="{{dir.id}}"> {{dir.firstname}} {{dir.lastname}} </option>
+
+{% endfor %}
+</select>
+
+<br>
+<br>
+genres :
+<select name="genre">
+{% for genr in genre %}
+  
+<option value="{{genr.id}}" >{{genr.name}} </option>
+
+{% endfor %}
+</select>
+
+<br>
+<br>
+date de sortie
+<input type="date" name="date" required>
+
+<br>
+<br>
+affiche du film
+<input type="file" name="file" required/>
+
+<br>
+<br>
+duree
+<input type="number" name="duree" required/> 
+
+<br>
+<br>
+description
+<textarea name="description" rows="4" cols="50">
+
+</textarea>
+<br>
+<br>
+</div>
+<button type="submit">ajoute film</button>
+
+</form>
+
+
+
+
+{%endblock %}

@@ -1,0 +1,11 @@
+
+<h1>acteur : </h1>
+   {{ acteur.firstname }} &nbsp;
+   {{ acteur.lastname }} <br/>
+
+<h1>Filmographie : </h1>
+
+   {% for film in acteur.film %}
+    {{ film.title }}  <br/>
+{% endfor %}
+

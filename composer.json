@@ -1,0 +1,20 @@
+{
+    "name": "yanis/mvc_objet",
+    "description": "monb application\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Yanis\\MvcObjet\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yanis Huard",
+            "email": "h.yanis@live.fr"
+        }
+    ],
+    "require": {
+        "klein/klein": "^2.1",
+        "twig/twig": "^3.5"
+    }
+}

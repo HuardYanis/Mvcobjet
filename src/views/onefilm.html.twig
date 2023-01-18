@@ -1,0 +1,20 @@
+   <h1>Tritre : </h1>{{ film.Title }} <br/>
+  
+  <h1> Decription : </h1>{{ film.description }} <br/>
+   <h1>date de sortie :</h1>{{ film.date }} <br/>
+   <h1>duree : </h1>{{ film.duration }} <br/>
+   
+<h1>acteur :</h1>
+{% for actor in film.actor %}
+    {{ actor.firstname }}  {{ actor.lastname}} <br/>
+{% endfor %}
+
+<h1>Genre :</h1>
+{{ film.genre.name }} <br/>
+
+<h1>Directeur : </h1>
+{{film.directeur.first_name}} {{film.directeur.last_name}}
+
+<h1>affiche</h1>
+<img src="{{film.coverimage}}">
+
