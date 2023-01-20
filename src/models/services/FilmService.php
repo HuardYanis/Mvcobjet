@@ -81,26 +81,11 @@ class FilmService {
 
         // $film->addActor($req['actor']);
 
-        $this->filmDao->create($film,$tab_acteur);
+        $this->filmDao->create($film,$tab_acteur, $file);
 
         
     }
 
 
-} // fabrication de l'objet movie. 
-    //     $movie = $this->movieDao->findById($id);  // recherche dans movieDao ( $id = id du movie )
-    //     $actors = $this->actorDao->findByMovie($id); // recherche des acteurs pour 1 film 
-    //     foreach ($actors as $actor) {
-    //         // fonction dans la classe Movie sans Entities
-    //         $movie->addActor($actor);  // fonction ajoute 1 acteur à l'objet movie (voire classe/entité Movie)
-    //     }
-
-    //     $genre = $this->genreDao->findByMovie($id); // recherche du genre . creatin de l'objet genre
-    //     $movie->setGenre($genre);
-    //     $director = $this->directorDao->findByMovie($id);
-    //     $movie->setDirector($director);
-
-    //    /* $comments = $this->commentDao->findByMovie($id);*/
-    //     return $movie;
-
+} 
 ?>

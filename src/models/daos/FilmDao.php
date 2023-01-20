@@ -64,7 +64,7 @@ class FilmDao extends BaseDao
 
     }
 
-    public function create(Film $film, $tab) {
+    public function create(Film $film, $tab, $file) {
 
         try{
             $this->db->beginTransaction();//transaction
@@ -78,6 +78,16 @@ class FilmDao extends BaseDao
             $stmt2 = $this->db->prepare("INSERT INTO relation (id , id_actor) VALUES(?,?)");
             $stmt2->execute([$id,$tab[$i]]);
             $this->db->commit();
+            $dossier = 'img/'; // non du fichier ou on va copier le fichier
+            $fichier = $file['file']['name']; 
+
+            
+            if(move_uploaded_file($file['file']['tmp_name'], $dossier.$fichier)) {
+                 echo 'Upload effectué avec succès !'; }
+             else {
+                echo 'Echec de l\'upload !';
+            }
+            
             }
         }   catch(Exception $e){
             $this->db->rollBack();
